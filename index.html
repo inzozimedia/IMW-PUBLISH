@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUBLISH on I.M.W</title>
+    <style>
+        body {
+            background-image: url("publis.PNG");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            position: absolute;
+            top: -16px;
+            left: 40px;
+            color: white;
+            font-size: 45px;
+            font-weight: bold;
+        }
+
+        /* Italic "Now add" text above buttons */
+        .instruction {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .box-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between the boxes */
+        }
+
+        .box {
+            width: 305px;
+            height: 182px;
+            background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent white background */
+            border: 1px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow for better visibility */
+            border-radius: 15px; /* Rounded corners */
+            position: relative; /* For button positioning */
+            padding: 10px;
+            color: black; /* Text color inside the boxes */
+        }
+
+        .title {
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .text {
+            margin-top: 10px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .button {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .green-button {
+            background-color: green;
+        }
+
+        .pink-button {
+            background-color: pink;
+            color: black; /* Adjust text color for contrast */
+        }
+
+        /* Large Box Below */
+        .large-box {
+            width: 610px;
+            height: 90px;
+            background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent white background */
+            border: 1px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
+            border-radius: 12px;
+            margin-top: 30px; /* Space between the two boxes and the large box */
+            position: relative;
+            padding: 10px;
+            color: black;
+        }
+
+        /* Title in the top-left corner */
+        .large-box .title {
+            font-size: 18px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: black;
+        }
+
+        /* Text in the middle of the box */
+        .large-box .text {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 30px;
+            color: black;
+        }
+
+        /* Button filling the lower part */
+        .large-box .button {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background-color: skyblue;
+            border: none;
+            border-radius: 0 0 12px 12px; /* Rounded only at the bottom */
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        /* Line separating footer from other content */
+        .footer-line {
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="title">PUBLISH in Inzozi Med Web</h1>
+
+    <!-- Italic text above the buttons -->
+    <p class="instruction">If you want to add your idea on Inzozi Med Web-blocks you may<br>choose your plan and develop further with web development interactions.<br>|"everything has a profit"|.</p>
+
+    <div class="box-container">
+        <!-- First Box: FREE PLAN -->
+        <div class="box">
+            <div class="title">FREE PLAN</div>
+            <div class="text">This plan will help you to make your own html codes and request a place in Inzozi Med Web ,It is limited so think to use the PAID plan after.And even you may check see clicks that have been made by your visitors and time spent using the Dashboard in INZOZI MED WEB.</div>
+            <button class="button green-button" onclick="location.href='free plan.html'">Select</button>
+        </div>
+
+        <!-- Second Box: PAID PLAN -->
+        <div class="box">
+            <div class="title">*PAID PLAN</div>
+            <div class="text">This plan allows you to host a website on Inzozi Med Web and make live changes with all features both on the site and in the Dashboard .and no watertexts are added in your site when published in Inzozi Med Web.You have full access on your site and get advanced web Analytics.</div>
+            <button class="button pink-button" onclick="location.href='paid plan.html'">Select</button>
+        </div>
+    </div>
+
+    <!-- Large Box Below -->
+    <div class="large-box">
+        <!-- Title on the top-left corner -->
+        <div class="title">*GENERATED PLAN*</div>
+
+        <!-- Text in the middle of the box -->
+        <div class="text">Get your own site in one week made by our specialist .just give a clear information and data describing it.</div>
+
+        <!-- Sky-blue button filling the lower part -->
+        <button class="button" onclick="location.href='generated plan.html'">Select this Plan</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-line"></div> <!-- Line separating the footer -->
+        © 2024 INZOZI MED WEB services - All rights reserved.
+    </footer>
+
+</body>
+</html>
