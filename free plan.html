@@ -3,98 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FREE PLAN</title>
+    <title>*free plan</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background-image: url('publish.PNG'); /* Replace with your image path */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
-            position: relative; /* Allows absolute positioning within the body */
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
         }
 
-        /* Blurred box */
-        .blurred-box {
-            width: 400px;
-            height: 200px;
-            background-color: rgba(255, 255, 255, 0.1); /* Light transparent background */
-            backdrop-filter: blur(10px); /* Blur effect */
-            border-radius: 20px; /* Rounded corners */
+        h1 {
+            text-align: center;
+            color: black;
+        }
+
+        p {
+            text-align: center;
+            font-style: italic;
+        }
+
+        .button-container {
             display: flex;
             justify-content: center;
-            align-items: center;
-            color: white;
-            font-family: Arial, sans-serif;
-            font-size: 20px;
-            text-align: center;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow for better visibility */
-            margin-bottom: 30px;
+            gap: 10px; /* Space between buttons */
+            margin-top: 20px;
         }
 
-        /* Round clickable image */
-        .round-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%; /* Makes the image round */
-            cursor: pointer;
-            transition: transform 0.3s; /* Animation for hover effect */
-            object-fit: cover; /* Ensures the image fits the circle */
+        .button-container a {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: gray;
+            color: white;
+            border-radius: 12px;
+            font-size: 16px;
+        }
+
+        .button-container a:hover {
+            background-color: darkgray;
+        }
+
+        .box {
+            width: 50%;
+            padding: 20px;
+            border: 2px solid gray;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative; /* This makes the box the reference point for absolute positioning */
+        }
+
+        .circle-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Prevent interaction with circles by default */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid gray;
             position: absolute;
         }
 
-        .round-image:hover {
-            transform: scale(1.1); /* Enlarge the image slightly on hover */
+        .circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        /* Placement classes */
-        .top-left {
-            top: 20px;
-            left: 20px;
+        /* Positioning circles around the box */
+        .circle-left-1 {
+            top: 10px;
+            left: 90px;
         }
 
-        .top-right {
-            top: 110px;
-            right: 420px;
+        .circle-left-2 {
+            top: 100px;
+            left: -90px;
         }
 
-        .bottom-left {
-            bottom: 20px;
-            left: 20px;
+        .circle-right-1 {
+            top: 10px;
+            right: -90px;
+            pointer-events: auto; /* Allow interaction for this specific circle */
         }
 
-        .bottom-right {
-            bottom: 20px;
-            right: 20px;
+        .circle-right-2 {
+            top: 200px;
+            right: -90px;
         }
 
-        /* Centering example (already centered by flex in this case) */
-        .center {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .circle-right-3 {
+            bottom: 10px;
+            right: -90px;
+        }
+
+        .separator {
+            margin: 20px 0;
+            border: none;
+            height: 1px;
+            background-color: gray;
+        }
+
+        video {
+            width: 80%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        .video-title {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: gray;
+        }
+
+        .thank-you {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 16px;
+            color: gray;
         }
     </style>
 </head>
 <body>
+    <!-- Main content in the box -->
+    <div class="box">
+        <h1>PUBLISH *free</h1>
+        <p>This FREE plan will help you to share your website idea on Inzozi Med Web and later you may be paid but regarding on some important factors.[First of all click the tick button to get verified.]</p>
+        
+        <!-- Line separator -->
+        <hr class="separator">
+        
+        <div class="button-container">
+            <a href="https://inzozimedia.github.io/vlocks/" target="_blank">PREVIEW</a>
+            <a href="codes.html" target="_self">PUBLISH</a>
+            <a href="request.html" target="_self">REQUEST</a>
+        </div>
 
-    <!-- Blurred box -->
-    <div class="blurred-box">
-        Sorry, this content is not yet available.<br>
-        Try again later
+        <!-- Line separator -->
+        <hr class="separator">
+
+        <!-- Video title and player -->
+        <p class="video-title">Importance of publishing on INZOZI MED WEB</p>
+        <video controls>
+            <source src="file/importance.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Circles outside the box -->
+        <div class="circle-container">
+            <!-- Circles on the left -->
+            <div class="circle circle-left-1">
+                <img src="file/13.PNG" alt="Image 1">
+            </div>
+            <div class="circle circle-left-2">
+                <img src="file/14.PNG" alt="Image 2">
+            </div>
+            
+            <!-- Circles on the right with clickable link -->
+            <a href="https://form.jotform.com/242494376509062" class="circle circle-right-1" target="_blank">
+                <img src="file/auth.PNG" alt="Image 3">
+            </a>
+            <div class="circle circle-right-2">
+                <img src="file/11.PNG" alt="Image 4">
+            </div>
+            <div class="circle circle-right-3">
+                <img src="file/40.PNG" alt="Image 5">
+            </div>
+        </div>
     </div>
 
-    <!-- Round image with placement options -->
-    <a href="index.html">
-        <img src="back.PNG" alt="Round Image" class="round-image top-right"> <!-- Replace with desired class -->
-    </a>
+    <!-- Footer -->
+    <footer>
+        <hr class="separator">
+        <p>INZOZI MED WEB | PUBLISH</p>
+    </footer>
 
+    <!-- Thank You Message -->
+    <div class="thank-you">
+        <p>Thank you for using Inzozi Med Web</p>
+    </div>
 </body>
 </html>
