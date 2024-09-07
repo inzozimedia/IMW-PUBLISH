@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REQUEST-DELETE</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            background-color: white;
+        }
+
+        .blurred-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .blurred-box h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .blurred-box input {
+            width: calc(100% - 20px);
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .blurred-box button {
+            background-color: gray;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+
+        .blurred-box button:hover {
+            opacity: 0.8;
+        }
+
+        .back-button {
+            background-color: none;
+            color: black;
+            border: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .back-button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Moving Circles -->
+    <script>
+        const numCircles = 40;
+        const circles = [];
+        const colors = ['black', 'white'];
+
+        for (let i = 0; i < numCircles; i++) {
+            const circle = document.createElement('div');
+            circle.className = 'circle';
+            circle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            circle.style.top = `${Math.random() * window.innerHeight}px`;
+            circle.style.left = `${Math.random() * window.innerWidth}px`;
+            circle.style.velocityX = Math.random() * 4 - 2;
+            circle.style.velocityY = Math.random() * 4 - 2;
+            document.body.appendChild(circle);
+            circles.push(circle);
+        }
+
+        function updatePositions() {
+            for (const circle of circles) {
+                let x = parseFloat(circle.style.left);
+                let y = parseFloat(circle.style.top);
+                let vx = parseFloat(circle.style.velocityX);
+                let vy = parseFloat(circle.style.velocityY);
+
+                x += vx;
+                y += vy;
+
+                if (x + circle.offsetWidth > window.innerWidth || x < 0) {
+                    vx = -vx;
+                }
+                if (y + circle.offsetHeight > window.innerHeight || y < 0) {
+                    vy = -vy;
+                }
+
+                for (const other of circles) {
+                    if (circle === other) continue;
+                    const dx = x - parseFloat(other.style.left);
+                    const dy = y - parseFloat(other.style.top);
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < circle.offsetWidth / 2 + other.offsetWidth / 2) {
+                        circle.style.backgroundColor = circle.style.backgroundColor === 'black' ? 'white' : 'black';
+                        other.style.backgroundColor = other.style.backgroundColor === 'black' ? 'white' : 'black';
+                    }
+                }
+
+                circle.style.left = `${x}px`;
+                circle.style.top = `${y}px`;
+                circle.style.velocityX = vx;
+                circle.style.velocityY = vy;
+            }
+        }
+
+        function animate() {
+            updatePositions();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+
+    <!-- Blurred Box -->
+    <div class="blurred-box">
+        <h5>You are requesting to DELETE your block in the WEB [Consider that this action is not irreversible and even your codes will be deleted from the storage] So complete the following to proceed.</h5>
+        <form action="https://formspree.io/f/meojdpve" method="POST">
+            <input type="text" name="projectId" placeholder="Project ID" required>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <button type="submit">DELETE</button>
+        </form>
+        <a href="free plan.html" class="back-button">BACK</a> <!-- Update "your-file.html" with your actual file name -->
+    </div>
+</body>
+</html>
