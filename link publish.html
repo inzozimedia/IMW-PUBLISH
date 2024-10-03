@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINK PUBLISH</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Form Container */
+        .form-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .form-container h2 {
+            margin-bottom: 25px;
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        /* Form Group */
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+            font-size: 16px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.3s ease;
+            background-color: #f9f9f9;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+            background-color: #fff;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+        }
+
+        .form-group textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Form Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 20px;
+            }
+
+            .form-container h2 {
+                font-size: 20px;
+            }
+
+            .submit-btn {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Website Submission Form</h2>
+        <form action="https://formspree.io/f/xrbgzznj" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="_replyto" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="websiteName">Website Name</label>
+                <input type="text" id="websiteName" name="websiteName" placeholder="Enter the website name" required>
+            </div>
+            <div class="form-group">
+                <label for="hostingServer">Hosting Server</label>
+                <input type="text" id="hostingServer" name="hostingServer" placeholder="Enter the hosting server name" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Website Description</label>
+                <textarea id="description" name="description" rows="4" placeholder="Describe the website" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="websiteLink">Website Link</label>
+                <input type="url" id="websiteLink" name="websiteLink" placeholder="Enter the website link" required>
+            </div>
+            <div class="form-group">
+                <label for="creator">Website Creator</label>
+                <input type="text" id="creator" name="creator" placeholder="Enter the website creator's name" required>
+            </div>
+            <!-- Hidden input for bot protection -->
+            <input type="hidden" name="_subject" value="New website submission!">
+            <button type="submit" class="submit-btn">Submit</button>
+
+        </form>
+    </div>
+    <p>SUBMIT ON INZOZI MED WEB</p>
+</body>
+</html>
